@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="905.0" style="-fx-background-color: #FFE4C4; -fx-border-color: white; -fx-border-width: 3px;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.userController">
+   <children>
+      <VBox layoutX="128.0" layoutY="42.0" prefHeight="454.0" prefWidth="276.0" spacing="11.0">
+         <children>
+            <TextField fx:id="tfId" promptText="ID" style="-fx-background-color: #F0FFFF;" />
+            <TextField fx:id="tfUsername" promptText="Username" style="-fx-background-color: #F0FFFF;" />
+            <TextField fx:id="tfCity" promptText="City" style="-fx-background-color: #F0FFFF;" />
+            <TextField fx:id="tfStreet" promptText="Street" style="-fx-background-color: #F0FFFF;" />
+            <TextField fx:id="tfPostalCode" promptText="Postal code" style="-fx-background-color: #F0FFFF;" />
+            <TextField fx:id="tfEmail" prefHeight="25.0" prefWidth="389.0" promptText="E-mail" style="-fx-background-color: #F0FFFF;" />
+            <TextField fx:id="tfTour" promptText="Tour" style="-fx-background-color: #F0FFFF;" />
+         </children>
+      </VBox>
+      <TableView fx:id="tvTable" layoutX="410.0" layoutY="42.0" onMouseClicked="#handleMouseAction" prefHeight="454.0" prefWidth="482.0" style="-fx-background-color: #F0FFFF; -fx-border-color: #d1932e; -fx-border-width: 2px;">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="25.0" style="-fx-background-color: #F0FFFF;" text="ID" />
+          <TableColumn fx:id="colUsername" prefWidth="90.0" style="-fx-background-color: #F0FFFF;" text="username" />
+            <TableColumn fx:id="colCity" prefWidth="70.0" style="-fx-background-color: #F0FFFF;" text="city" />
+            <TableColumn fx:id="colPostalCode" prefWidth="65.0" style="-fx-background-color: #F0FFFF;" text="postal code" />
+            <TableColumn fx:id="colStreet" prefWidth="51.0" style="-fx-background-color: #F0FFFF;" text="street" />
+            <TableColumn fx:id="colEmail" prefWidth="68.0" style="-fx-background-color: #F0FFFF;" text="e-mail" />
+            <TableColumn fx:id="colTour" prefWidth="107.0" style="-fx-background-color: #F0FFFF;" text="tour" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnInsert" layoutX="104.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnInsertAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #596886; -fx-border-color: white; -fx-text-fill: white;" text="Insert">
+         <graphic>
+            <!--<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@add.png" />
+               </image>
+            </ImageView>-->
+         </graphic></Button>
+      <Button fx:id="btnUpdate" layoutX="202.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnInsertAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #596886; -fx-border-color: white; -fx-text-fill: white;" text="Update">
+         <graphic>
+            <!--<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@update.png" />
+               </image>
+            </ImageView>-->
+         </graphic></Button>
+      <Button fx:id="btnDelete" layoutX="302.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnInsertAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #596886; -fx-text-fill: white; -fx-border-color: white;" text="Delete">
+         <graphic>
+            <!--<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@delete.png" />
+               </image>
+            </ImageView>-->
+         </graphic></Button>
+      <VBox layoutX="14.0" layoutY="42.0" prefHeight="242.0" prefWidth="100.0" spacing="15.0">
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="City">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Street">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Postal code">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="E-mail">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Tour">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <TextField fx:id="tfSearch" layoutX="577.0" layoutY="525.0" promptText="Search in database for" style="-fx-background-color: #F0FFFF;" />
+      <Button fx:id="btnSearch" layoutX="741.0" layoutY="524.0" mnemonicParsing="false" onAction="#searchRecord" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: #596886; -fx-border-color: white; -fx-text-fill: white;" text="Search" />
+      <Button fx:id="btnRefresh" layoutX="742.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnInsertAction" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: #596886; -fx-text-fill: white; -fx-border-color: white;" text="Refresh" />
+   </children>
+</AnchorPane>
